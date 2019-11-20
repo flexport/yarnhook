@@ -69,14 +69,14 @@ if (!YARNHOOK_BYPASS) {
     if (output.length > 0) {
       if (YARNHOOK_DRYRUN) {
         console.log(
-          `Changes to lockfile found, you should run \`${cmd} install\` if you want to have dependencies of this branch.`
+          `⚠️  Changes to lockfile found, you should run \`${cmd} install\` if you want to have dependencies of this branch.`
         );
       } else {
         console.log(`Changes to lockfile found, running \`${cmd} install\``);
         try {
           execa.sync(cmd, args[cmd], { stdio: "inherit" });
         } catch (err) {
-          console.warn(`Running ${cmd} ${args[cmd].join(' ')} failed`);
+          console.warn(`Running ${cmd} ${args[cmd].join(" ")} failed`);
         }
       }
     }
